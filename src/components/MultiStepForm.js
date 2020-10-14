@@ -9,20 +9,46 @@ const defaultData = {
   lastName: "",
   nickName: "",
 };
-
 const steps = [
   { id: "names" },
   { id: "review" },
   { id: "submit" },
 ];
+//  const MultiStepForm = () => {
 
-export const MultiStepForm = () => {
-  const [formData, setForm] = useForm(defaultData);
+//   const [formData, setForm] = useForm(defaultData);
+//   const { step, navigation } = useStep({
+//     steps,
+//     initialStep: 0,
+//   });
+//   const props = { formData, setForm, navigation };
+
+//   switch (step.id) {
+//     case "names":
+//       return <Names {...props} />;
+//     case "review":
+//       return <Review {...props} />;
+//     case "submit":
+//       return <Submit {...props} />;
+//     default :
+//   }
+//   return (
+//     <div>
+//       <h1>Multi step form</h1>
+//     </div>
+//   );
+ 
+ 
+//   };
+
+
+
+  const MultiStepForm = () => {
+    const [formData, setForm] = useForm(defaultData);
   const { step, navigation } = useStep({
     steps,
     initialStep: 0,
   });
-
   const props = { formData, setForm, navigation };
 
   switch (step.id) {
@@ -33,12 +59,10 @@ export const MultiStepForm = () => {
     case "submit":
       return <Submit {...props} />;
     default :
-      return <Names {...props} />;
+    return <Names {...props} />;
+  }
+   
   }
 
-  return (
-    <div>
-      <h1>Multi step form</h1>
-    </div>
-  );
-};
+
+export default MultiStepForm;
