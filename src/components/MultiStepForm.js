@@ -32,6 +32,8 @@ export const MultiStepForm = () => {
       return <Review {...props} />;
     case "submit":
       return <Submit {...props} />;
+    default :
+      return <Names {...props} />;
   }
 
   return (
